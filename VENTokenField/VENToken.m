@@ -62,8 +62,8 @@
 - (void)setHighlighted:(BOOL)highlighted
 {
     _highlighted = highlighted;
-    UIColor *textColor = highlighted ? [UIColor whiteColor] : self.colorScheme;
-    UIColor *backgroundColor = highlighted ? self.colorScheme : [UIColor clearColor];
+    UIColor *textColor = highlighted ? self.highlightedTextColor : self.colorScheme;
+    UIColor *backgroundColor = highlighted ? self.highlightedBackgroundColor : [UIColor clearColor];
     self.titleLabel.textColor = textColor;
     self.backgroundView.backgroundColor = backgroundColor;
 }
@@ -79,6 +79,14 @@
     _font = font;
     
     [self setTitleText:self.titleLabel.text];
+}
+
+- (void)setHighlightedTextColor:(UIColor *)highlightedTextColor {
+    _highlightedTextColor = highlightedTextColor;
+}
+
+- (void)setHighlightedBackgroundColor:(UIColor *)highlightedBackgroundColor {
+    _highlightedBackgroundColor = highlightedBackgroundColor;
 }
 
 
