@@ -61,6 +61,8 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     [self setUpInit];
 }
 
